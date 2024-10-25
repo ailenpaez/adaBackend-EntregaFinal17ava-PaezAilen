@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-const sequelize = new Sequelize(process.env.DB_URI);
+const sequelize = new Sequelize(`${process.env.DB_URI}`);
 
 (async () => {
     try {

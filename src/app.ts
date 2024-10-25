@@ -1,6 +1,11 @@
-import express from "express"
-import "./database"
+import express, { json } from "express"
+// import "./database/connect"
+import indexRouter from "./routes"
 
 const app = express()
 
- export default app
+app.use(json());
+
+app.use("/", indexRouter)
+
+export default app

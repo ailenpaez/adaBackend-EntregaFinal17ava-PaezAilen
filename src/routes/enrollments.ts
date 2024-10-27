@@ -3,6 +3,6 @@ import EnrollmentController from "../controllers/enrollments";
 
 const router = Router();
 
-router.get("/", EnrollmentController.getAll);
+router.get("/", EnrollmentController.ViewEnrollments);
 
 export default router;

@@ -1,15 +1,14 @@
-import { Request, Response } from "express";
-import { Enrollment } from "../models";
+import { Request, Response } from 'express';
+import EnrollmentService from "../services/enrollments";
 
 class EnrollmentController {
-    static async getAll(req: Request, res: Response) {
+    static async ViewEnrollments(req: Request, res: Response) {
         try {
-            const enrollments = await Enrollment.findAll();
-            // res.json(enrollments);
+            const enrollments = await EnrollmentService.ViewEnrollments();
+            res.status(200).json(enrollments);
         } catch (error) {
-            res.status(500).json({ error: error.message });
+            res.status(500).json({ message: error.message });
         }
     }
 }
-
 export default EnrollmentController;

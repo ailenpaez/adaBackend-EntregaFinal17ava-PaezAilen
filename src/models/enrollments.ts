@@ -4,17 +4,17 @@ import Signature from "./signatures";
 
 const Enrollment = sequelize.define("Enrollment", { //!TABLA INTERMEDIA
   id: {
-    type: DataTypes.UUID,
+    type: DataTypes.STRING,
     primaryKey: true,
-    defaultValue: DataTypes.UUIDV4,
+    defaultValue: DataTypes.STRING ,
   },
   userId: {
-    type: DataTypes.UUID,
+    type: DataTypes.STRING,
     allowNull: false,
     references: { model: User, key: "userId" },
   },
   signatureId: {
-    type: DataTypes.UUID,
+    type: DataTypes.STRING,
     allowNull: false,
     references: { model: Signature, key: "signatureId" },
   },

@@ -3,12 +3,12 @@ import User from "./users";
 
 const Auth = sequelize.define("Auth", {
     authId: {
-        type: DataTypes.UUID,
+        type: DataTypes.STRING,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.STRING ,
     },
     userId: {
-        type: DataTypes.UUID,
+        type: DataTypes.STRING,
         allowNull: false,
         references: {
             model: User,

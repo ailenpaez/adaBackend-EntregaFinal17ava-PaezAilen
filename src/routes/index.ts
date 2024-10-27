@@ -10,7 +10,7 @@ const router = Router();
 
 router.use("/users", users)
 router.use("/signatures", signatures)
-router.use("/entollments", enrollments)
+router.use("/enrollments", enrollments)
 router.use("/auth", auth)
 
 export default router;

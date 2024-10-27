@@ -2,9 +2,9 @@ import sequelize, { DataTypes } from "../database/connect";
 
 const User = sequelize.define("User", {
     userId: {
-        type: DataTypes.UUID,
+        type: DataTypes.STRING,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.STRING ,
         allowNull: false,
         unique: true,
     },

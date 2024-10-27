@@ -11,7 +11,7 @@ const sequelize = new Sequelize(process.env.DB_URI);
 //     }
 // })();
 
-sequelize.sync({alter:true});
+sequelize.sync({force: true});
 
 export { DataTypes };
 export default sequelize;

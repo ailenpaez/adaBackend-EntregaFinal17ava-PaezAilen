@@ -1,30 +1,18 @@
 import sequelize, { DataTypes } from "../database/connect";
 
 const Signature = sequelize.define("Signature", {
-    id: {
+    signatureId: {
         type: DataTypes.UUID,
-        primaryKey: true, //!pk
+        primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    syllabus: {
-        type: DataTypes.TEXT, //^ ACÁ IRIA UNA URL DE DRIVE PARA LOS TEMARIOS
-        allowNull: false
-    },
-    startDate: {
-        type: DataTypes.DATE,
-        allowNull: false, //  OBLI
-    },
-    endDate: {
-        type: DataTypes.DATE,
-        allowNull: false, // OBLI
-    },
+    name: { type: DataTypes.STRING, allowNull: false },
+    syllabus: { type: DataTypes.TEXT, allowNull: false }, //^ ACÁ IRIA UNA URL DE DRIVE PARA LOS TEMARIOS
+    startDate: { type: DataTypes.DATE, allowNull: false },
+    endDate: { type: DataTypes.DATE, allowNull: false },
 }, {
-    timestamps: true,
+    timestamps: false,
     tableName: "Signatures",
 });
 
-export default Signature; 
+export default Signature;

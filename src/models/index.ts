@@ -1,34 +1,15 @@
 import User from "./users";
 import Signature from "./signatures";
 import Enrollment from "./enrollments";
+import Auth from "./auth";
 
 const defineAssociations = () => {
-    // User a muchos Enrollments
-    User.hasMany(Enrollment, {
-        foreignKey: "userId",
-        as: "enrollments",
-    });
+    User.hasOne(Auth, { foreignKey: "userId", as: "auth" });
+    Auth.belongsTo(User, { foreignKey: "userId", as: "user" });
 
-    // Class a muchos Enrollments
-    Signature.hasMany(Enrollment, {
-        foreignKey: "classId",
-        as: "enrollments",
-    });
-
-    // Enrollment a un User
-    Enrollment.belongsTo(User, {
-        foreignKey: "userId",
-        as: "user",
-    });
-
-    //Enrollment a una Class
-    Enrollment.belongsTo(Signature, {
-        foreignKey: "signatureId",
-        as: "signature",
-    });
+    User.belongsToMany(Signature, {through: Enrollment})
+    Signature.belongsToMany(User, {through: Enrollment})
 };
 
-
-export {User, Signature, Enrollment}
-
-
+export { User, Signature, Enrollment, Auth };
+export default defineAssociations;

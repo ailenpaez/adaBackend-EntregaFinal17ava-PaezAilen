@@ -1,8 +1,8 @@
 import sequelize, { DataTypes } from "../database/connect";
+import User from "./users";
+import Signature from "./signatures";
 
-import {Signature, User} from ".";
-
-const Enrollment = sequelize.define("Enrollment", {
+const Enrollment = sequelize.define("Enrollment", { //!TABLA INTERMEDIA
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
@@ -10,27 +10,18 @@ const Enrollment = sequelize.define("Enrollment", {
   },
   userId: {
     type: DataTypes.UUID,
-    allowNull: false, // OBLI
-    references: {
-      model: User,
-      key: "id",
-    },
+    allowNull: false,
+    references: { model: User, key: "userId" },
   },
   signatureId: {
     type: DataTypes.UUID,
-    allowNull: false, // OBLI
-    references: {
-      model: Signature,
-      key: "id",
-    },
-  },
-  enrollmentDate: {
-    type: DataTypes.DATE,
-    allowNull: false, // OBLI
+    allowNull: false,
+    references: { model: Signature, key: "signatureId" },
   },
 }, {
-  timestamps: true,
+  timestamps: false,
   tableName: "Enrollments",
 });
+
 
 export default Enrollment;

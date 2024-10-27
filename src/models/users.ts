@@ -1,10 +1,12 @@
 import sequelize, { DataTypes } from "../database/connect";
 
 const User = sequelize.define("User", {
-    id: {
+    userId: {
         type: DataTypes.UUID,
-        primaryKey: true, //! PK
+        primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        unique: true,
     },
     username: {
         type: DataTypes.STRING,
@@ -19,37 +21,23 @@ const User = sequelize.define("User", {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len: {
-                args: [8, 255],
-                msg: "The password must be at least 8 characters long.",
-            },
-            is: {
-                args: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).+$/,
-                msg: "The password must include numbers, uppercase and lowercase letters, and special characters.",
-            },
+            len: [8, 255], //^"The password must be at least 8 characters long."
+
+            is: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).+$/, //^ "The password must include numbers, uppercase and lowercase letters, and special characters."
         },
     },
     email: {
         type: DataTypes.STRING,
         unique: true,
         allowNull: false,
-        validate: {
-            isEmail: {
-                msg: "You must enter a valid email address.",
-            },
-        },
+        validate: { isEmail: true },
     },
-    birthdate: {
-        type: DataTypes.DATE,
-        allowNull: true, // puede ser null 
-    },
-    nationality: {
-        type: DataTypes.STRING,
-        allowNull: true, // puede ser null
-    },
+    birthdate: { type: DataTypes.DATE, allowNull: true },
+    nationality: { type: DataTypes.STRING, allowNull: true },
 }, {
-    timestamps: true,
+    timestamps: false,
     tableName: "Users",
 });
 
-export default User; 
+export default User;
+

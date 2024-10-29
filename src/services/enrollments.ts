@@ -1,4 +1,4 @@
-import { Enrollment } from "../models";
+import { Enrollment, User, Signature } from "../models";
 
 class EnrollmentService {
 
@@ -11,6 +11,7 @@ class EnrollmentService {
             throw new Error("no hay")
         }
     }
+
 }
 
 export default EnrollmentService

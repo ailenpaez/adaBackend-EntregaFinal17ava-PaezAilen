@@ -1,15 +1,14 @@
 import { Signature } from "../models";
-import { SignatureUpdate } from "../interfaces/signatures";
+import { SignatureUpdate, SignatureCreate } from "../interfaces/signatures";
 
 class SignatureService {
 
     static async getAllSignatures() {
-
         try {
             const signatures = await Signature.findAll();
             return signatures;
         } catch (error) {
-            throw new Error("errorcito")
+            throw new Error("ERROR_FETCHING_ALL_SIGNATURES");
         }
     }
 
@@ -19,42 +18,70 @@ class SignatureService {
                 where: { signatureId: id },
             });
             if (!signature) {
-                throw new Error("Signature not found");
+                throw new Error("SIGNATURE_NOT_FOUND");
             }
             return signature;
         } catch (error) {
-            throw new Error(`Error fetching signature: ${error.message}`);
+            throw new Error(`ERROR_FETCHING_SIGNATURE | ${error.message}`);
         }
     }
 
-    static async createSignature(signatureData: { name: string; syllabus: string; startDate: Date; endDate: Date }) {
+    static async createSignature(newSignature: SignatureCreate) {
         try {
-            const existingSignature = await Signature.findOne({ where: { name: signatureData.name } });
-            if (existingSignature) {
-                const error = new Error("SIGNATURE_ALREADY_EXISTS");
-                (error as any).status = 409;
-                throw error;
+            if (
+                !newSignature ||
+                !newSignature.name ||
+                !newSignature.syllabus ||
+                !newSignature.startDate ||
+                !newSignature.endDate
+            ) {
+                throw new Error("MISSING_REQUIRED_FIELDS");
             }
 
-            const newSignature = await Signature.create(signatureData);
-            return newSignature;
+            const existingSignature = await Signature.findOne({
+                where: { name: newSignature.name },
+            });
+
+            if (existingSignature) {
+                throw new Error("NAME_ALREADY_EXISTS");
+            }
+
+            const { signatureId, ...createData } = newSignature;
+            const createdSignature = await Signature.create(createData);
+            return createdSignature;
+
         } catch (error) {
-            throw error;
+            throw error; // pal controller
         }
     }
 
-    static async updatedSignature(id: string, updateData: SignatureUpdate) {
+    static async updateSignature(id: string, updateData: SignatureUpdate) {
         try {
+            if (!updateData || Object.keys(updateData).length === 0) {
+                throw new Error("NO_DATA_TO_UPDATE");
+            }
+
             const signature = await Signature.findOne({ where: { signatureId: id } });
             if (!signature) {
-                const error = new Error("SIGNATURE_NOT_FOUND");
-                (error as any).status = 404;
-                throw error;
+                throw new Error("SIGNATURE_NOT_FOUND");
+            }
+
+            if (updateData.name) {
+                const existingSignature = await Signature.findOne({
+                    where: {
+                        name: updateData.name,
+                        signatureId: id,//!EXCLUIR ID
+                    },
+                });
+
+                if (existingSignature) {
+                    throw new Error("NAME_ALREADY_EXISTS");
+                }
             }
 
             await signature.update(updateData);
-
             return signature;
+
         } catch (error) {
             throw error;
         }
@@ -64,15 +91,13 @@ class SignatureService {
         try {
             const signature = await Signature.findOne({ where: { signatureId: id } });
             if (!signature) {
-                const error = new Error("SIGNATURE_NOT_FOUND");
-                (error as any).status = 404;
-                throw error;
+                throw new Error("SIGNATURE_NOT_FOUND");
             }
 
             await signature.destroy();
             return { message: "SIGNATURE_DELETED_SUCCESSFULLY", signature: signature };
         } catch (error) {
-            throw new Error(`WHAT?! ${error.message || error}`);
+            throw error; // VA PAR CONTROLLER
         }
     }
 

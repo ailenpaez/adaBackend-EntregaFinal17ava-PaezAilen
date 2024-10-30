@@ -2,9 +2,9 @@ import sequelize, { DataTypes } from "../database/connect";
 
 const Signature = sequelize.define("Signature", {
     signatureId: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID, 
         primaryKey: true,
-        defaultValue: DataTypes.STRING ,
+        defaultValue: DataTypes.UUIDV4,
     },
     name: { type: DataTypes.STRING, allowNull: false },
     syllabus: { type: DataTypes.TEXT, allowNull: false }, //^ ACÁ IRIA UNA URL DE DRIVE PARA LOS TEMARIOS

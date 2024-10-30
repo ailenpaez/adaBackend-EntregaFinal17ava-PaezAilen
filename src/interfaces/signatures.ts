@@ -1,9 +1,9 @@
 export interface SignatureCreate {
-    signatureId?: number; // Opcional si es generado automáticamente
+    signatureId?: number; 
     name: string;
-    syllabus: string; // URL o enlace al syllabus
-    startDate: Date;  // Fecha de inicio
-    endDate: Date;    // Fecha de fin
+    syllabus: string; 
+    startDate: Date;  
+    endDate: Date;   
 }
 
 

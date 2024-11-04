@@ -1,2 +1,0 @@
-// hashear pass
-// custom error

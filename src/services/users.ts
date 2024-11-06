@@ -2,7 +2,7 @@ import { User } from "../models";
 import { UserCreate, UserUpdate } from "../interfaces/users";
 import { ValidationError } from 'sequelize';
 import { userSchema } from "../validators/userValidator";
-import { hashPassword } from "../utils/hashedPass"
+import { createHash } from "../utils/create-hash"
 import { z } from "zod";
 
 class UserService {
@@ -10,7 +10,7 @@ class UserService {
     static async getAllUsers() {
         try {
             const users = await User.findAll({
-                attributes: { exclude: ['password'] }, // EXCLUIR PASS PARA NO MOSTRAR
+                attributes: { exclude: ['password'] },
             });
             return users;
         } catch (error) {
@@ -41,7 +41,7 @@ class UserService {
                 throw new Error("EMAIL_ALREADY_EXISTS");
             }
 
-            validatedUser.password = await hashPassword(validatedUser.password);
+            validatedUser.password = await createHash(validatedUser.password);
 
             const createdUser = await User.create(validatedUser);
 

@@ -51,7 +51,7 @@ class SignatureService {
             return createdSignature;
 
         } catch (error) {
-            throw error; // pal controller
+            throw error;
         }
     }
 
@@ -70,7 +70,7 @@ class SignatureService {
                 const existingSignature = await Signature.findOne({
                     where: {
                         name: updateData.name,
-                        signatureId: id,//!EXCLUIR ID
+                        signatureId: id,
                     },
                 });
 
@@ -97,7 +97,7 @@ class SignatureService {
             await signature.destroy();
             return { message: "SIGNATURE_DELETED_SUCCESSFULLY", signature: signature };
         } catch (error) {
-            throw error; // VA PAR CONTROLLER
+            throw error;
         }
     }
 

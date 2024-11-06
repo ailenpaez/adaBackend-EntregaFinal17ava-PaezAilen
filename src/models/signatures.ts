@@ -7,7 +7,7 @@ const Signature = sequelize.define("Signature", {
         defaultValue: DataTypes.UUIDV4,
     },
     name: { type: DataTypes.STRING, allowNull: false },
-    syllabus: { type: DataTypes.TEXT, allowNull: false }, //^ ACÁ IRIA UNA URL DE DRIVE PARA LOS TEMARIOS
+    syllabus: { type: DataTypes.TEXT, allowNull: false }, // PRETENDE SER URL, POR ESO SE PASA COMO TEXT
     startDate: { type: DataTypes.DATE, allowNull: false },
     endDate: { type: DataTypes.DATE, allowNull: false },
 }, {

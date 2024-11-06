@@ -1,5 +1,5 @@
 export interface SignatureCreate {
-    signatureId?: number; 
+    signatureId?: string; 
     name: string;
     syllabus: string; 
     startDate: Date;  

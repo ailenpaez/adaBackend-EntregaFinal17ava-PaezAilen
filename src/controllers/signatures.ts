@@ -1,7 +1,7 @@
 import { SignatureUpdate, SignatureCreate } from '../interfaces/signatures'
 import { Request, Response, NextFunction } from "express";
 import SignatureService from "../services/signatures";
-import customError, { CustomError } from '../utils/customError';
+import  { CustomError } from '../utils/customError';
 
 class SignatureController {
 

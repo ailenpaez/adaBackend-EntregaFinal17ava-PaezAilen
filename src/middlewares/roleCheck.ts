@@ -1,10 +1,9 @@
-// import { Request, Response, NextFunction } from 'express';
+// USERS -> USERS | ADMIN -> USERS Y SIGNATURES
+function authorizeRole(role) {}
 
-// export const roleCheck = (role: 'admin' | 'student') => {
-//     return (req: Request, res: Response, next: NextFunction) => {
-//         if (req.user?.role !== role) {
-//             return res.status(403).json({ message: "Forbidden: You don't have permission to perform this action." });
-//         }
-//         next();
-//     };
-// };
+/* Lo que se buscaba implementar acá:
+
+- Asigné dos tipos de Roles a los usuarios 
+👉🏼 users -> Sólo iban a poder modificar los datos propios de la tabla Users
+👉🏼admin -> Además de modificar Users propios, iban a poder hacer acciones en la tabla Signatures.
+ */

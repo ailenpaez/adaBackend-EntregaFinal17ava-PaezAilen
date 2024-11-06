@@ -28,7 +28,6 @@ class UserController {
         const newUser = req.body;
 
         try {
-            // Validar con Zod usando userSchema
             userSchema.parse(newUser);
 
             const createdUser = await UserService.createUser(newUser);

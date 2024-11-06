@@ -1,0 +1,81 @@
+2024-11-05 01:43:43 info: User data validated successfully
+2024-11-05 01:43:43 info: User registered successfully
+2024-11-05 01:43:57 error: Registration failed: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "password"
+    ],
+    "message": "Required"
+  }
+]
+2024-11-05 01:46:26 error: EMAIL_ALREADY_EXISTS
+2024-11-05 01:50:06 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:04:45 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:06:56 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:07:03 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:07:19 error: notNull Violation: User.username cannot be null
+2024-11-05 02:07:43 error: notNull Violation: User.username cannot be null
+2024-11-05 02:07:51 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:07:59 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:10:54 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:28:13 error: EMAIL_ALREADY_EXISTS
+2024-11-05 02:53:11 error: INVALID_PASSWORD
+2024-11-05 02:53:29 error: USER_NOT_FOUND
+2024-11-05 03:36:03 error: Session has expired or does not exist.
+2024-11-05 03:36:28 error: Session has expired or does not exist.
+2024-11-05 03:36:32 error: Session has expired or does not exist.
+2024-11-05 03:37:57 error: Session has expired or does not exist.
+2024-11-05 03:39:17 error: Session has expired or does not exist.
+2024-11-05 03:43:34 error: Session has expired or does not exist.
+2024-11-05 03:45:28 error: Session has expired or does not exist.
+2024-11-05 03:45:58 error: Session has expired or does not exist.
+2024-11-05 04:32:56 error: [{"field":"password","message":"🚩The password must be at least 8 characters long"},{"field":"password","message":"🚨The password must include at least one number"},{"field":"password","message":"🚨The password must include at least one lowercase letter"},{"field":"password","message":"🚨The password must include at least one special character"}]
+2024-11-05 04:33:10 error: [{"field":"fullname","message":"Required"}]
+2024-11-05 04:33:21 error: EMAIL_ALREADY_EXISTS
+2024-11-05 04:34:26 error: [{"field":"username","message":"Required"}]
+2024-11-05 04:34:34 error: [{"field":"email","message":"🖖🏼Must be a valid email address"}]
+2024-11-05 04:34:50 error: [{"field":"password","message":"🚩The password must be at least 8 characters long"},{"field":"password","message":"🚨The password must include at least one number"}]
+2024-11-05 04:35:05 error: [{"field":"password","message":"🚩The password must be at least 8 characters long"},{"field":"password","message":"🚨The password must include at least one number"},{"field":"password","message":"🚨The password must include at least one special character"}]
+2024-11-05 05:43:19 error: Error al cerrar sesión: 
+2024-11-05 05:43:19 error: Error al cerrar sesión: 
+2024-11-05 05:46:27 error: Error al cerrar sesión: jwt expired
+2024-11-05 05:46:27 error: Error al cerrar sesión: 
+2024-11-05 05:46:29 error: Error al cerrar sesión: jwt expired
+2024-11-05 05:46:29 error: Error al cerrar sesión: 
+2024-11-05 05:47:32 error: Error al cerrar sesión: jwt expired
+2024-11-05 05:47:32 error: Error al cerrar sesión: 
+2024-11-05 05:47:41 error: Error al cerrar sesión: jwt expired
+2024-11-05 05:47:41 error: Error al cerrar sesión: 
+2024-11-05 05:57:25 warn: Token inválido
+2024-11-05 05:57:47 warn: Token inválido
+2024-11-05 06:03:37 warn: Token inválido
+2024-11-05 06:03:39 warn: Token inválido
+2024-11-05 06:03:41 warn: Token inválido
+2024-11-05 06:04:15 warn: Token inválido
+2024-11-05 06:04:17 warn: Token inválido
+2024-11-05 06:04:18 warn: Token inválido
+2024-11-05 06:05:30 warn: Token inválido
+2024-11-05 06:08:42 warn: Token inválido
+2024-11-05 06:08:44 warn: Token inválido
+2024-11-05 06:08:47 warn: Token inválido
+2024-11-05 06:09:03 warn: Token inválido
+2024-11-05 06:13:01 warn: Token inválido
+2024-11-05 06:20:48 warn: Token inválido
+2024-11-05 06:20:50 warn: Token inválido
+2024-11-05 06:27:03 warn: Token inválido
+2024-11-05 06:30:35 warn: Token inválido invalid signature
+2024-11-05 06:30:38 warn: Token inválido invalid signature
+2024-11-05 06:36:06 warn: Token inválido invalid signature
+2024-11-05 06:36:08 warn: Token inválido invalid signature
+2024-11-05 06:36:22 warn: Token inválido invalid signature
+2024-11-05 06:36:25 warn: Token inválido invalid signature
+2024-11-05 06:38:58 warn: Token inválido invalid signature
+2024-11-05 06:39:23 warn: Token inválido invalid signature
+2024-11-05 06:39:26 warn: Token inválido invalid signature
+2024-11-05 06:40:38 warn: Token inválido invalid signature
+2024-11-05 06:40:39 warn: Token inválido invalid signature
+2024-11-05 06:40:41 warn: Token inválido invalid signature
+2024-11-05 06:40:57 warn: Token inválido invalid signature

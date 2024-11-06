@@ -1,0 +1,57 @@
+2024-11-06 07:10:27 error: Login failed: Hash mismatch for user spock@vulcan.com
+2024-11-06 07:10:27 error: Login error: INVALID_PASSWORD
+2024-11-06 07:10:29 error: Login failed: Hash mismatch for user spock@vulcan.com
+2024-11-06 07:10:29 error: Login error: INVALID_PASSWORD
+2024-11-06 07:31:43 error: Login failed: Hash mismatch for user spock@vulcan.com
+2024-11-06 07:31:43 error: Login error: INVALID_PASSWORD
+2024-11-06 07:31:43 error: Login error: INVALID_PASSWORD
+2024-11-06 07:31:45 error: Login failed: Hash mismatch for user spock@vulcan.com
+2024-11-06 07:31:45 error: Login error: INVALID_PASSWORD
+2024-11-06 07:31:45 error: Login error: INVALID_PASSWORD
+2024-11-06 07:32:35 error: Login failed: Hash mismatch for user spock@vulcan.com
+2024-11-06 07:32:35 error: Login error: INVALID_PASSWORD
+2024-11-06 07:32:35 error: Login error: INVALID_PASSWORD
+2024-11-06 07:32:52 error: Login failed: Hash mismatch for user spock@vulcan.com
+2024-11-06 07:32:52 error: Login error: INVALID_PASSWORD
+2024-11-06 07:32:52 error: Login error: INVALID_PASSWORD
+2024-11-06 07:32:54 error: Error during registration: EMAIL_ALREADY_EXISTS
+2024-11-06 07:33:12 error: Error during registration: EMAIL_ALREADY_EXISTS
+2024-11-06 07:39:00 error: Login failed: Hash mismatch for user simba@pridelands.com
+2024-11-06 07:39:00 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:00 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:44 error: Login failed: Hash mismatch for user simba@pridelands.com
+2024-11-06 07:39:44 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:44 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:46 error: Login failed: Hash mismatch for user simba@pridelands.com
+2024-11-06 07:39:46 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:46 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:48 error: Login failed: Hash mismatch for user simba@pridelands.com
+2024-11-06 07:39:48 error: Login error: INVALID_PASSWORD
+2024-11-06 07:39:48 error: Login error: INVALID_PASSWORD
+2024-11-06 07:43:01 error: Login failed: Hash mismatch for user simba@pridelands.com
+2024-11-06 07:43:01 error: Login error: INVALID_PASSWORD
+2024-11-06 07:43:01 error: Login error: INVALID_PASSWORD
+2024-11-06 08:05:10 error: Login error: INVALID_PASSWORD
+2024-11-06 08:05:44 error: Login error: INVALID_PASSWORD
+2024-11-06 08:06:33 error: Login error: notNull Violation: Auth.userId cannot be null
+2024-11-06 08:13:42 error: Login error: notNull Violation: Auth.userId cannot be null
+2024-11-06 09:13:47 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:14:29 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:17:34 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:17:37 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:18:53 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:19:15 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:20:02 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:34:03 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:39:12 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:43:29 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:43:31 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:46:30 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:46:33 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:47:09 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:58:54 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 09:58:57 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 10:20:38 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 10:20:40 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 10:20:43 error: Logout error: TOKEN_NOT_FOUND
+2024-11-06 12:00:18 error: Error during registration: Validation error

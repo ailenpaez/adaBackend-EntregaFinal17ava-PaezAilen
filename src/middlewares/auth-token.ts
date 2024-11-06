@@ -1,23 +1,25 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import logger from '../utils/logger';
+import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
-export const authenticateJWT = (req: Request, res: Response, next: NextFunction) => {
-    const token = req.header('Authorization')?.split(' ')[1];
-    if (token) {
-        jwt.verify(token, JWT_SECRET, (err, user: any) => { 
-            if (err) {
-                logger.error(`Authentication error: ${err.message}`);
-                return res.sendStatus(403);
-            }
-            (req as any).user = user; 
-            next();
-        });
-    } else {
-        logger.warn('Authorization token not provided');
-        res.sendStatus(401);
-    }
+const JWT_SECRET = process.env.JWT_SECRET || "hakunamatata";
+
+export const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "TOKEN_NOT_PROVIDED" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    console.error("JWT verification failed:", error);
+    res.status(403).json({ message: "INVALID_TOKEN🔥" });
+  }
+
 };
-
